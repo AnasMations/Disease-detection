@@ -205,10 +205,10 @@ with modelTraining:
     choiceList = []
     for i in range(0, choiceSize):
         choice = st.selectbox("Symptom "+str(i+1), options=symptomsList, key=i)
-        if not(choice in choiceList)and choice!=' ':
+        if not(choice in choiceList):
             choiceList.append(choice)
         else:
-            st.write("Symptom "+str(i+1)+" and Symptom "+str(choiceList.index(choice)+1)+ "\nCan't have same symptom selected more than once\n")
+            st.write("Symptom "+str(i+1)+str(choice)+" and Symptom "+str(choiceList.index(choice)+1)+ "\nCan't have same symptom selected more than once\n")
     
     for i in range(choiceSize, 17):
         choiceList.append(0)
