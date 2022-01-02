@@ -29,7 +29,11 @@ st.markdown(
 )
 
 df = pd.read_csv('Data/dataset.csv')
+for col in df.columns:
+    df[col] = df[col].str.replace('_', ' ')
 df1 = pd.read_csv('Data/Symptom-severity.csv')
+for col in df1.columns:
+    df1[col] = df1[col].str.replace('_', ' ')
 
 @st.cache(allow_output_mutation=True)
 def model():
@@ -56,8 +60,7 @@ def model():
     # **Symptom severity rank**
 
     df1 = pd.read_csv('Data/Symptom-severity.csv')
-    for col in df1.columns:
-        df1[col] = df1[col].str.replace('_', ' ')
+
 
     # **Get overall list of symptoms**
 
@@ -120,7 +123,6 @@ def model():
 
     # Random forest code:
 
-    from sklearn.naive_bayes import GaussianNB
     rnd_forest = RandomForestClassifier(random_state=42, max_features='sqrt', n_estimators=500, max_depth=8)
     rnd_forest.fit(x_train, y_train)
     preds = rnd_forest.predict(x_test)
