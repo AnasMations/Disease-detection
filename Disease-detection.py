@@ -217,5 +217,8 @@ with modelTraining:
     #st.text(choiceList)
 
     if(submit==True):
-        diseaseInfo( predd(choiceList, rnd_forest) )
+        if not(' 'in choiceList):
+            diseaseInfo( predd(choiceList, rnd_forest) )
+        else:
+            st.write("Can't recieve empty inputs")
         #diseaseInfo("Acne")
