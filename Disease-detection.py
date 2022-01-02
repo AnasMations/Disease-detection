@@ -195,6 +195,7 @@ modelTraining = st.container()
 #----Streamlit----
 
 with header:
+    st.image('header.jpg')
     st.title("Disease detection website")
     st.header("Model Training")
 
