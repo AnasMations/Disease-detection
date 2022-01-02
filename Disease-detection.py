@@ -205,7 +205,7 @@ with modelTraining:
     choiceList = []
     for i in range(0, choiceSize):
         choice = st.selectbox("Symptom "+str(i+1), options=symptomsList, key=i)
-        if not(choice in choiceList)and len(choiceList)!=0:
+        if not(choice in choiceList)and choice!=' ':
             choiceList.append(choice)
         else:
             st.write("Symptom "+str(i+1)+" and Symptom "+str(choiceList.index(choice)+1)+ "\nCan't have same symptom selected more than once\n")
@@ -217,5 +217,8 @@ with modelTraining:
     #st.text(choiceList)
 
     if(submit==True):
-        diseaseInfo( predd(choiceList, rnd_forest) )
+        if len(choiceList)==17:
+            diseaseInfo( predd(choiceList, rnd_forest) )
+        else:
+            st.write("Can't recieve empty inputs")
         #diseaseInfo("Acne")
