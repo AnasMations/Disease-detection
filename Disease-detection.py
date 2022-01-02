@@ -17,9 +17,6 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import metrics
 
-#cd A:/Desktop/MATH201 Project Website"
-#streamlit run "A:/Desktop/MATH201 Project Website/Disease detection.py"
-
 st.markdown(
     """
     <style>
