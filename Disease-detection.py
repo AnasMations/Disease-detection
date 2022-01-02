@@ -208,7 +208,7 @@ with modelTraining:
         if not(choice in choiceList):
             choiceList.append(choice)
         else:
-            st.write("Symptom "+str(i+1)+"Symptom "+str(choiceList.index(choice)+1)+ "\nCan't have same symptom selected more than once\n")
+            st.write("Symptom "+str(i+1)+" and Symptom "+str(choiceList.index(choice)+1)+ "\nCan't have same symptom selected more than once\n")
     
     for i in range(choiceSize, 17):
         choiceList.append(0)
