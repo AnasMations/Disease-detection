@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split,KFold,cross_val_score,GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix,classification_report,plot_confusion_matrix,plot_roc_curve,precision_score,roc_curve
@@ -87,8 +87,8 @@ def model():
 
     # Compare linear relationships between attributes using correlation coefficient generated using correlation heatmap
 
-    plt.figure(figsize=(10, 10))
-    sns.heatmap(df.corr(), cmap='PuBu', annot=False)
+    #plt.figure(figsize=(10, 10))
+    #sns.heatmap(df.corr(), cmap='PuBu', annot=False)
 
 
     # **Get the names of diseases from data**
