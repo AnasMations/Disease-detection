@@ -217,6 +217,8 @@ with modelTraining:
     #st.text(choiceList)
 
     if(submit==True):
+        for choice in choiceList:
+            st.write(choice)
         if not(' 'in choiceList):
             diseaseInfo( predd(choiceList, rnd_forest) )
         else:
