@@ -31,13 +31,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-df = pd.read_csv('Data\dataset.csv')
-df1 = pd.read_csv('Data\Symptom-severity.csv')
+df = pd.read_csv('Data/dataset.csv')
+df1 = pd.read_csv('Data/Symptom-severity.csv')
 
 @st.cache(allow_output_mutation=True)
 def model():
     # **Read and shuffle the dataset**
-    df = pd.read_csv('A:\Desktop\MATH201 Project Website\Data\dataset.csv')
+    df = pd.read_csv('Data/dataset.csv')
     df = shuffle(df, random_state=42)
 
     # **Remove the trailing space from the symptom columns**
@@ -56,7 +56,7 @@ def model():
 
     # **Symptom severity rank**
 
-    df1 = pd.read_csv('A:\Desktop\MATH201 Project Website\Data\Symptom-severity.csv')
+    df1 = pd.read_csv('Data/Symptom-severity.csv')
 
     # **Get overall list of symptoms**
 
@@ -164,9 +164,9 @@ def predd(psymptoms, x):
 model()
 
 #----Data import----
-Disease_description = pd.read_csv('Data\Disease_description.csv')
-Disease_precaution = pd.read_csv('Data\Disease_precaution.csv')
-Symptom_severity = pd.read_csv('Data\Symptom-severity.csv')
+Disease_description = pd.read_csv('Data/Disease_description.csv')
+Disease_precaution = pd.read_csv('Data/Disease_precaution.csv')
+Symptom_severity = pd.read_csv('Data/Symptom-severity.csv')
 symptomsList = Symptom_severity["Symptom"].tolist()
 symptomsList.insert(0, "")
 
@@ -179,8 +179,8 @@ symptomsList.insert(0, "")
 #     st.subheader(disease_precaution)
 
 def diseaseInfo(desase):
-    df = pd.read_csv('Data\Disease_precaution.csv')
-    df2 = pd.read_csv('Data\Disease_description.csv')
+    df = pd.read_csv('Data/Disease_precaution.csv')
+    df2 = pd.read_csv('Data/Disease_description.csv')
 
     index = df.index
     condition = df["Disease"] == desase
