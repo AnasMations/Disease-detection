@@ -203,11 +203,10 @@ with modelTraining:
     sel_col, disp_col = st.columns(2)
     choiceSize = st.slider("Insert the number of symptoms", min_value=1, max_value=17, value=3)
     choiceList = []
-    tobeselectedSymptoms= symptomsList.copy()
+
     for i in range(0, choiceSize):
-        choice = st.selectbox("Symptom "+str(i+1), options=tobeselectedSymptoms, key=i)
+        choice = st.selectbox("Symptom "+str(i+1), options=symptomsList, key=i)
         choiceList.append(choice)
-        tobeselectedSymptoms.remove(choice)
 
     for i in range(choiceSize, 17):
         choiceList.append(0)
