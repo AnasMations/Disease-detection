@@ -32,7 +32,7 @@ df = pd.read_csv('Data/dataset.csv')
 for col in df.columns:
     df[col] = df[col].str.replace('_', ' ')
 df1 = pd.read_csv('Data/Symptom-severity.csv')
-for col in df.columns:
+for col in df1.columns:
     df1[col] = df1[col].str.replace('_', ' ')
 @st.cache(allow_output_mutation=True)
 def model():
