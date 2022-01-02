@@ -75,9 +75,9 @@ def model():
 
     # **Assign symptoms with no rank to zero**
 
-    d = d.replace('dischromic _patches', 0)
-    d = d.replace('spotting_ urination', 0)
-    df = d.replace('foul_smell_of urine', 0)
+    d = d.replace('dischromic  patches', 0)
+    d = d.replace('spotting  urination', 0)
+    df = d.replace('foul smell of urine', 0)
 
     # **Check if entire columns have zero values so we can drop those values**
 
