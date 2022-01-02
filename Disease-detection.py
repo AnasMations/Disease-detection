@@ -203,11 +203,13 @@ with modelTraining:
     sel_col, disp_col = st.columns(2)
     choiceSize = st.slider("Insert the number of symptoms", min_value=1, max_value=17, value=3)
     choiceList = []
-
     for i in range(0, choiceSize):
         choice = st.selectbox("Symptom "+str(i+1), options=symptomsList, key=i)
-        choiceList.append(choice)
-
+        if not(choice in choiceList):
+            choiceList.append(choice)
+        else:
+            st.write("Symptom "+str(i+1)+"Symptom "+str(choiceList.index(choice)+1)+ "\nCan't have same symptom selected more than once\n")
+    
     for i in range(choiceSize, 17):
         choiceList.append(0)
 
