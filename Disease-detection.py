@@ -171,8 +171,6 @@ Disease_description = pd.read_csv('Data/Disease_description.csv')
 for col in Disease_description.columns:
     Disease_description[col] = Disease_description[col].str.replace('_', ' ')
 Disease_precaution = pd.read_csv('Data/Disease_precaution.csv')
-for col in Disease_precaution.columns:
-    Disease_precaution[col] = Disease_precaution[col].str.replace('_', ' ')
 Symptom_severity = pd.read_csv('Data/Symptom-severity.csv')
 Symptom_severity['Symptom'] = Symptom_severity['Symptom'].str.replace('_',' ')
 symptomsList = Symptom_severity["Symptom"].tolist()
@@ -188,8 +186,6 @@ symptomsList.insert(0, "")
 
 def diseaseInfo(desase):
     df = pd.read_csv('Data/Disease_precaution.csv')
-    for col in df.columns:
-        df[col] = df[col].str.replace('_', ' ')
     df2 = pd.read_csv('Data/Disease_description.csv')
 
 
