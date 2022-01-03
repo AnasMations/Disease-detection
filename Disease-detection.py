@@ -188,6 +188,8 @@ symptomsList.insert(0, "")
 
 def diseaseInfo(desase):
     df = pd.read_csv('Data/Disease_precaution.csv')
+    for col in df.columns:
+        df[col] = df[col].str.replace('_', ' ')
     df2 = pd.read_csv('Data/Disease_description.csv')
 
 
