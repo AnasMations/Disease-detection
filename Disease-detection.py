@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split,KFold,cross_val_score,GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import f1_score, accuracy_score, confusion_matrix,classification_report,plot_confusion_matrix,plot_roc_curve,precision_score,roc_curve
-import seaborn as sns
+# import seaborn as sns
 from sklearn.utils import shuffle
 #from pandas_profiling import ProfileReport
 from sklearn.linear_model import LogisticRegression, Perceptron, RidgeClassifier, SGDClassifier
@@ -31,9 +31,9 @@ st.markdown(
 df = pd.read_csv('Data/dataset.csv')
 for col in df.columns:
     df[col] = df[col].str.replace('_', ' ')
+
 df1 = pd.read_csv('Data/Symptom-severity.csv')
-for col in df1.columns:
-    df1[col] = df1[col].str.replace('_', ' ')
+df1['Symptom'] = df1['Symptom'].str.replace('_',' ')
 
 @st.cache(allow_output_mutation=True)
 def model():
