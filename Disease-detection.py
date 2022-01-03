@@ -123,7 +123,7 @@ def model():
 
     # Random forest code:
 
-    rnd_forest = RandomForestClassifier(random_state=42, max_features='sqrt', n_estimators=500, max_depth=8)
+    rnd_forest = RandomForestClassifier(random_state=42, max_features='sqrt', n_estimators=500, max_depth=13)
     rnd_forest.fit(x_train, y_train)
     preds = rnd_forest.predict(x_test)
     conf_mat = confusion_matrix(y_test, preds)
@@ -168,8 +168,11 @@ model()
 
 #----Data import----
 Disease_description = pd.read_csv('Data/Disease_description.csv')
+for col in Disease_description.columns:
+    Disease_description[col] = Disease_description[col].str.replace('_', ' ')
 Disease_precaution = pd.read_csv('Data/Disease_precaution.csv')
 Symptom_severity = pd.read_csv('Data/Symptom-severity.csv')
+Symptom_severity['Symptom'] = Symptom_severity['Symptom'].str.replace('_',' ')
 symptomsList = Symptom_severity["Symptom"].tolist()
 symptomsList.insert(0, "")
 
