@@ -32,7 +32,7 @@ df = pd.read_csv('Data/dataset.csv')
 
 
 df1 = pd.read_csv('Data/Symptom-severity.csv')
-
+df1['Symptom'] = df1['Symptom'].str.replace('_',' ')
 
 @st.cache(allow_output_mutation=True)
 def model():
