@@ -29,11 +29,10 @@ st.markdown(
 )
 
 df = pd.read_csv('Data/dataset.csv')
-for col in df.columns:
-    df[col] = df[col].str.replace('_', ' ')
+
 
 df1 = pd.read_csv('Data/Symptom-severity.csv')
-df1['Symptom'] = df1['Symptom'].str.replace('_',' ')
+
 
 @st.cache(allow_output_mutation=True)
 def model():
@@ -60,6 +59,7 @@ def model():
     # **Symptom severity rank**
 
     df1 = pd.read_csv('Data/Symptom-severity.csv')
+    df1['Symptom'] = df1['Symptom'].str.replace('_', ' ')
 
 
     # **Get overall list of symptoms**
